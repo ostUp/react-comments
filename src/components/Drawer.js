@@ -60,7 +60,6 @@ function Drawer() {
                      <div></div>
                      <b>21 498 грн.</b>
                   </li>
-
                   <li>
                      <span>Налог 5%:</span>
                      <div></div>

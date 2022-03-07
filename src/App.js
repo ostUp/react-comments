@@ -1,10 +1,8 @@
+import NotFound from './pages/NotFound/NotFound';
+import './styles/index.scss';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">Start</header>
-    </div>
-  );
+	return <NotFound />;
 }
 
 export default App;
- 

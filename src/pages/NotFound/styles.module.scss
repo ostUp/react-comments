@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+body {
+	background-color: $dark-grey-color;
+	color: $white-color;
+}
+
+.container {
+	max-width: 1370px;
+	padding: 0 15px;
+	margin: 0 auto;
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		text-align: center;
+		.left__side {
+			margin-top: 20px;
+			margin-bottom: 40px;
+			&-header {
+				font-size: 80px;
+				font-weight: bold;
+				line-height: 180%;
+			}
+			&-title {
+				font-size: 24px;
+				font-weight: bold;
+				line-height: 180%;
+				margin-bottom: 10px;
+			}
+			&-subtitle {
+				font-size: 16px;
+				font-weight: normal;
+				line-height: 180%;
+			}
+		}
+	}
+}

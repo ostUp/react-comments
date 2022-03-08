@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+
+body {
+	background-color: $dark-grey-color;
+}
+
+.container {
+	max-width: 1370px;
+	padding: 0 15px;
+	margin: 0 auto;
+	color: $white-color;
+}

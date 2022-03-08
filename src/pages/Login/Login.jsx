@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../../components/Header';
 import MainButton from '../../components/UI/MainButton';
 import MainInput from '../../components/UI/MainInput';
+import Header from '../../components/Header';
 import styles from './styles.module.scss';
 
 function Login() {

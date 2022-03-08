@@ -10,7 +10,7 @@ function Header() {
 						<div className={styles['nav__list-left']}>
 							<li className={styles['nav__list-item']}>
 								<a href="/about" className={styles['nav__list-link']}>
-									Про нас
+									Про мене
 								</a>
 							</li>
 							<li style={{ marginLeft: 40 }} className={styles['nav__list-item']}>

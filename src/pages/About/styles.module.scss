@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+body {
+	background-color: $white-color;
+}
+
+.container {
+	max-width: 1370px;
+	padding: 0 15px;
+	margin: 0 auto;
+	.about__header {
+		color: $dark-grey-color;
+		text-align: center;
+		font-weight: 700;
+		font-size: 50px;
+		line-height: 180%;
+		margin: 10px 0;
+	}
+	.about__text {
+		font-size: 20px;
+		margin-bottom: 20px;
+		&-link {
+			color: $blue-color;
+			&:hover{
+				color: $red-color;
+			}
+		}
+	}
+}

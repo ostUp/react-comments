@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+	color: $dark-grey-color;
 	max-width: 1370px;
 	padding: 0 15px;
 	margin: 0 auto;
@@ -17,11 +18,12 @@ body {
 		margin: 10px 0;
 	}
 	.about__text {
+		color: $dark-grey-color;
 		font-size: 20px;
 		margin-bottom: 20px;
 		&-link {
 			color: $blue-color;
-			&:hover{
+			&:hover {
 				color: $red-color;
 			}
 		}

@@ -4,9 +4,10 @@ import styles from './styles.module.scss';
 
 function Main() {
 	return (
-		<div className={styles.container}>
+		<>
 			<Header />
-		</div>
+			<div className={styles.container}>Main</div>
+		</>
 	);
 }
 

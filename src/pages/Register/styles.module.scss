@@ -2,16 +2,16 @@
 
 body {
 	background-color: $dark-grey-color;
+	color: $white-color;
 }
 
 .container {
 	max-width: 1370px;
 	padding: 0 15px;
 	margin: 0 auto;
-	color: $white-color;
 	.wrapper {
 		margin: 0 auto;
-		margin-top: 20vh;
+		margin-top: 16vh;
 		max-width: 700px;
 		.header {
 			text-align: center;

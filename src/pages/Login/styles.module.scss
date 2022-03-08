@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+body {
+	background-color: $dark-grey-color;
+}
+
+.container {
+	max-width: 1370px;
+	padding: 0 15px;
+	margin: 0 auto;
+	color: $white-color;
+	.wrapper {
+		margin: 0 auto;
+		margin-top: 25vh;
+		max-width: 700px;
+
+		.header {
+			text-align: center;
+			font-weight: 600;
+			font-size: 40px;
+			line-height: 180%;
+			letter-spacing: 0.2px;
+		}
+		.wrapper__btn {
+			display: flex;
+			justify-content: space-between;
+			.btn {
+				color: $red-color;
+				background-color: $white-color;
+			}
+		}
+	}
+}

@@ -3,6 +3,7 @@ import MainButton from '../../components/UI/MainButton';
 import MainInput from '../../components/UI/MainInput';
 import Header from '../../components/Header';
 import styles from './styles.module.scss';
+import WhiteButton from '../../components/UI/WhiteButton';
 
 function Login() {
 	return (
@@ -17,12 +18,7 @@ function Login() {
 					</form>
 					<div className={styles['wrapper__btn']}>
 						<MainButton className={styles.btn}>Увійти</MainButton>
-						<MainButton
-							style={{ backgroundColor: 'white', color: '#ff8a62' }}
-							className={styles['register']}
-						>
-							Зареєструватися
-						</MainButton>
+						<WhiteButton className={styles['register']}>Зареєструватися</WhiteButton>
 					</div>
 				</div>
 			</div>

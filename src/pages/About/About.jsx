@@ -34,7 +34,7 @@ function About() {
 					👈
 				</h3>
 				<h3 className={styles['about__text']}>
-					Також можете відввідати мій{' '}
+					Також можете відвідати мій{' '}
 					<a
 						href="https://github.com/ostUp"
 						target="_blank"
@@ -43,6 +43,15 @@ function About() {
 					>
 						Telegram
 					</a>
+					,{' '}
+					<a
+						href="https://github.com/ostUp"
+						target="_blank"
+						rel="noreferrer"
+						className={styles['about__text-link']}
+					>
+						LinkedIn
+					</a>
 					{' і '}
 					<a
 						href="https://github.com/ostUp/blystsiv"
@@ -50,7 +59,7 @@ function About() {
 						rel="noreferrer"
 						className={styles['about__text-link']}
 					>
-						мій сайт
+						вебсайт
 					</a>{' '}
 					🌐
 				</h3>

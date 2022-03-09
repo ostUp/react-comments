@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.post__wrapper {
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid $red-color;
+	padding: 40px 40px;
+	margin-bottom: 30px;
+	&:hover{
+		box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
+		border: 2px solid $blue-color;
+	}
+	.post__left-side {
+		cursor: pointer;
+		.post__header {
+			margin-bottom: 10px;
+		}
+	}
+	.post__btns {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 20px;
+		.btn{
+			margin-left: 20px;
+		}
+	}
+}

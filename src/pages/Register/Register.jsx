@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/Header';
 import MainButton from '../../components/UI/MainButton';
 import MainInput from '../../components/UI/MainInput';
+import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
 
 function Register() {
@@ -18,12 +19,11 @@ function Register() {
 					</form>
 					<div className={styles['wrapper__btn']}>
 						<MainButton className={styles['register']}>Зареєструватися</MainButton>
-						<MainButton
-							style={{ backgroundColor: 'white', color: '#ff8a62' }}
+						<WhiteButton
 							className={styles.btn}
 						>
 							Увійти
-						</MainButton>
+						</WhiteButton>
 					</div>
 				</div>
 			</div>

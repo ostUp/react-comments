@@ -1,5 +1,5 @@
 import React from 'react';
-import MainButton from '../../components/UI/MainButton';
+import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
 
 function NotFound() {
@@ -12,7 +12,7 @@ function NotFound() {
 					<p className={styles['left__side-subtitle']}>Не панікуйте і перейдіть на головну сторінку</p>
 				</div>
 				<div className="right__side">
-					<MainButton>На головну</MainButton>
+					<WhiteButton>На головну</WhiteButton>
 				</div>
 			</div>
 		</div>

@@ -1,16 +1,15 @@
 @import "../../styles/variables";
 
-body {
-	background-color: $white-color;
-}
+// body{
+// background-color: $white-color;
+// }
 
 .container {
-	color: $dark-grey-color;
+	color: $white-color;
 	max-width: 1370px;
 	padding: 0 15px;
 	margin: 0 auto;
 	.about__header {
-		color: $dark-grey-color;
 		text-align: center;
 		font-weight: 700;
 		font-size: 50px;
@@ -18,7 +17,6 @@ body {
 		margin: 10px 0;
 	}
 	.about__text {
-		color: $dark-grey-color;
 		font-size: 20px;
 		margin-bottom: 20px;
 		&-link {

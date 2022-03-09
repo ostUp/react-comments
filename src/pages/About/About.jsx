@@ -30,7 +30,7 @@ function About() {
 						className={styles['about__text-link']}
 					>
 						ось тут
-					</a>
+					</a>{' '}
 					👈
 				</h3>
 				<h3 className={styles['about__text']}>
@@ -50,8 +50,9 @@ function About() {
 						rel="noreferrer"
 						className={styles['about__text-link']}
 					>
-						мій сайт 🌐
-					</a>
+						мій сайт
+					</a>{' '}
+					🌐
 				</h3>
 			</div>
 		</>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
 function Header() {
@@ -9,20 +10,20 @@ function Header() {
 					<ul className={styles['nav__list']}>
 						<div className={styles['nav__list-left']}>
 							<li className={styles['nav__list-item']}>
-								<a href="/about" className={styles['nav__list-link']}>
+								<Link to="/about" className={styles['nav__list-link']}>
 									Про мене
-								</a>
+								</Link>
 							</li>
 							<li style={{ marginLeft: 40 }} className={styles['nav__list-item']}>
-								<a href="/posts" className={styles['nav__list-link']}>
+								<Link to="/home" className={styles['nav__list-link']}>
 									Пости
-								</a>
+								</Link>
 							</li>
 						</div>
 						<li className={styles['nav__list-item']}>
-							<a href="/login" className={styles['nav__list-link']}>
+							<Link to="/login" className={styles['nav__list-link']}>
 								Увійти
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</nav>

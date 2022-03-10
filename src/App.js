@@ -1,15 +1,12 @@
-import Login from './pages/Login/Login';
-import NotFound from './pages/NotFound/NotFound';
-import Register from './pages/Register/Register';
-import About from './pages/About/About';
-import Main from './pages/Main/Main';
 import './styles/index.scss';
+import AppRouter from './components/AppRouter';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
 	return (
-		<>
-			<Main />
-		</>
+		<BrowserRouter>
+			<AppRouter />
+		</BrowserRouter>
 	);
 }
 

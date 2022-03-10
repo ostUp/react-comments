@@ -3,21 +3,19 @@ import SmallButton from '../UI/SmallButton';
 import SmallButtonDanger from '../UI/SmallButton/SmallButtonDanger';
 import styles from './styles.module.scss';
 
-function Post() {
+function Post(props) {
+	console.log(props);
 	return (
 		<div className={styles['post__wrapper']}>
 			<div className={styles['post__left-side']}>
+					<strong className={styles['post__id']}>{props.post.id}</strong>
 				<h3 className={styles['post__header']}>
-					1. Лорем ипсум долор сит амет, ин агам дицам еффициантур вел, ин яуо.
+					{props.post.title}
 				</h3>
-				<p className={styles['post__text']}>
-					Lorem Ipsum є псевдо- латинський текст використовується у веб - дизайні, типографіка,
-					верстка, і друку замість англійської підкреслити елементи дизайну над змістом. Це також
-					називається заповнювач ( або наповнювач) текст.
-				</p>
+				<p className={styles['post__text']}>{props.post.body}</p>
 			</div>
 			<div className={styles['post__btns']}>
-				<SmallButton style={{ marginRight: '20px' }}>🔍</SmallButton>
+				<SmallButton style={{ marginRight: '30px' }}>🔍</SmallButton>
 				<SmallButtonDanger>🗑️</SmallButtonDanger>
 			</div>
 		</div>

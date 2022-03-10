@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header';
-import Post from '../../components/Post';
+import PostList from '../../components/PostList';
 import Select from '../../components/Select';
 import MainInput from '../../components/UI/MainInput';
+import Modal from '../../components/UI/Modal';
 import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
 
 function Main() {
+	const [posts, setPosts] = useState([
+		// {
+		// 	id: 1,
+		// 	title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+		// 	body: 'quia et suscipituuntur expedita et cumnreprehenderit molestiae ut ut quas totamnostrum rerum est autem sunt rem eveniet architecto',
+		// },
+		// {
+		// 	id: 2,
+		// 	title: 'qui est esse',
+		// 	body: 'est rerum tempoint nihil reprehenderit dolor beatae ea dolores nequiis voluptate porro vel nihil molestiae ut reicienui neque nisi nulla',
+		// },
+		// {
+		// 	id: 3,
+		// 	title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+		// 	body: 'et iusto sed qu aut adnvoluptatem doloribus vel accusantium quis pariaturnmolestiae porro eius odio et labore et velit aut',
+		// },
+		// {
+		// 	id: 4,
+		// 	title: 'eum et est occaecati',
+		// 	body: 'ullam et ssit aadcdsmcom ifomdovm iofdmi midfmif m mfi quis sunt voluptatem rerum illo velit',
+		// },
+	]);
+
 	return (
 		<>
 			<Header />
@@ -21,11 +45,12 @@ function Main() {
 						<MainInput placeholder="Пошук..." />
 					</div>
 				</div>
-				<Post />
-				<Post />
-				<Post />
-				<Post />
-				<Post />
+
+				{posts.length !== 0 ? (
+					<PostList posts={posts} />
+				) : (
+					<h1 className={styles['main__header']}>Добавте пост!</h1>
+				)}
 			</div>
 		</>
 	);

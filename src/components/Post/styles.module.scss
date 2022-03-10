@@ -4,25 +4,38 @@
 	display: flex;
 	justify-content: space-between;
 	border: 2px solid $red-color;
-	padding: 40px 40px;
+	padding: 40px;
 	margin-bottom: 30px;
-	&:hover{
+	&:hover {
 		box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
 		border: 2px solid $blue-color;
 	}
 	.post__left-side {
 		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+
+		.post__id {
+			color: $grey-color;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 100%;
+		}
 		.post__header {
-			margin-bottom: 10px;
+			font-weight: 700;
+			font-size: 22px;
+			line-height: 180%;
+		}
+		.post__text {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 130%;
 		}
 	}
 	.post__btns {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin: 0 20px;
-		.btn{
-			margin-left: 20px;
-		}
+		margin: 0 20px 0 40px;
 	}
 }

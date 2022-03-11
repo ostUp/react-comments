@@ -15,7 +15,7 @@ function Header() {
 								</Link>
 							</li>
 							<li style={{ marginLeft: 40 }} className={styles['nav__list-item']}>
-								<Link to="/home" className={styles['nav__list-link']}>
+								<Link to="/" className={styles['nav__list-link']}>
 									Пости
 								</Link>
 							</li>

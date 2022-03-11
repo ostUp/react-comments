@@ -29,6 +29,21 @@ function Main() {
 			title: 'eum et est occaecati',
 			body: 'ullam et ssit aadcdsmcom ifomdovm iofdmi midfmif m mfi quis sunt voluptatem rerum illo velit',
 		},
+		{
+			id: 5,
+			title: 'qui est esse',
+			body: 'est rerum tempoint nihil reprehenderit dolor beatae ea dolores nequiis voluptate porro vel nihil molestiae ut reicienui neque nisi nulla',
+		},
+		{
+			id: 6,
+			title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
+			body: 'et iusto sed qu aut adnvoluptatem doloribus vel accusantium quis pariaturnmolestiae porro eius odio et labore et velit aut',
+		},
+		{
+			id: 7,
+			title: 'eum et est occaecati',
+			body: 'ullam et ssit aadcdsmcom ifomdovm iofdmi midfmif m mfi quis sunt voluptatem rerum illo velit',
+		},
 	]);
 
 	return (
@@ -37,7 +52,7 @@ function Main() {
 			<div className={styles.container}>
 				<h1 className={styles['main__header']}>Сторінка з постами</h1>
 				<div className={styles['main__top']}>
-					<Select />
+					<Select  />
 					<div className="main__top-add">
 						<WhiteButton>Додати пост 🔥</WhiteButton>
 					</div>

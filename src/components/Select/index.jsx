@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import arrowDown from '../../assets/images/select-arrow.svg';
 
 function Select({
-	options = ['1', '2', '3', '4'],
+	options = ['По названню', 'По опису'],
 	value = '',
 	placeholder = 'Сортування',
 	onChange = () => {},
@@ -31,19 +31,17 @@ function Select({
 					</div>
 				</div>
 				{open && (
-					<>
-						<div className={styles['select__context']}>
-							{options.map((i) => (
-								<p
-									key={i.value}
-									className={styles['select__context__item']}
-									onClick={() => clickOption(i)}
-								>
-									По 20 штук
-								</p>
-							))}
-						</div>
-					</>
+					<div className={styles['select__context']}>
+						{options.map((i) => (
+							<p
+								key={i.value}
+								className={styles['select__context__item']}
+								onClick={() => clickOption(i)}
+							>
+								{i}
+							</p>
+						))}
+					</div>
 				)}
 			</OutsideClickHandler>
 		</div>

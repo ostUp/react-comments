@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
+import Pagination from '../../components/Pagination';
 import PostList from '../../components/PostList';
 import Select from '../../components/Select';
 import MainInput from '../../components/UI/MainInput';
+import PaginationButton from '../../components/UI/PaginationButton';
 // import Modal from '../../components/UI/Modal';
 import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
@@ -52,7 +54,7 @@ function Main() {
 			<div className={styles.container}>
 				<h1 className={styles['main__header']}>Сторінка з постами</h1>
 				<div className={styles['main__top']}>
-					<Select  />
+					<Select />
 					<div className="main__top-add">
 						<WhiteButton>Додати пост 🔥</WhiteButton>
 					</div>
@@ -66,6 +68,7 @@ function Main() {
 				) : (
 					<h1 className={styles['main__header']}>Добавте пост!</h1>
 				)}
+				<Pagination/>
 			</div>
 		</>
 	);

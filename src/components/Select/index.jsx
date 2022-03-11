@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import arrowDown from '../../assets/images/select-arrow.svg';
 
 function Select({
-	options = ['По названню', 'По опису'],
+	options = ['По заголовку', 'По опису'],
 	value = '',
 	placeholder = 'Сортування',
 	onChange = () => {},

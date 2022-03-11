@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 function AppRouter() {
 	return (
 		<Routes>
-			<Route path="/home" element={<Home />} />
+			<Route path="/" element={<Home />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/login" element={<Login />} />
 			<Route path="*" element={<NotFound />} />

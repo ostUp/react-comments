@@ -4,8 +4,7 @@ import Pagination from '../../components/Pagination';
 import PostList from '../../components/PostList';
 import Select from '../../components/Select';
 import MainInput from '../../components/UI/MainInput';
-import PaginationButton from '../../components/UI/PaginationButton';
-// import Modal from '../../components/UI/Modal';
+import Modal from '../../components/UI/Modal';
 import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
 
@@ -48,15 +47,22 @@ function Main() {
 		},
 	]);
 
+	const [modalActive, setModalActive] = useState(false);
+
 	return (
 		<>
+			<Modal active={modalActive} setActive={setModalActive}>
+				<MainInput placeholder='Введіть заголовок...'/>
+				<MainInput placeholder='Введіть тіло поста...'/>
+				<WhiteButton>Додати</WhiteButton>
+			</Modal>
 			<Header />
 			<div className={styles.container}>
 				<h1 className={styles['main__header']}>Сторінка з постами</h1>
 				<div className={styles['main__top']}>
 					<Select />
-					<div className="main__top-add">
-						<WhiteButton>Додати пост 🔥</WhiteButton>
+					<div className={styles['main__top-add']}>
+						<WhiteButton onClick={() => setModalActive(true)}>Додати пост 🔥</WhiteButton>
 					</div>
 					<div className={styles['main__top-search']}>
 						<MainInput placeholder="Пошук..." />
@@ -68,7 +74,7 @@ function Main() {
 				) : (
 					<h1 className={styles['main__header']}>Добавте пост!</h1>
 				)}
-				<Pagination/>
+				<Pagination />
 			</div>
 		</>
 	);

@@ -1,10 +1,18 @@
-import React from 'react'
-import styles from './styles.module.scss'
+import './modal.css';
 
-function Modal() {
-  return (
-	 <div className={styles.modal}></div>
-  )
+function Modal({ active, setActive, children }) {
+	return (
+		<div
+			className={active ? 'modal active' : 'modal'}
+			onClick={() => {
+				setActive(false);
+			}}
+		>
+			<div className={'modal__content'} onClick={(e) => e.stopPropagation()}>
+				{children}
+			</div>
+		</div>
+	);
 }
 
-export default Modal
+export default Modal;

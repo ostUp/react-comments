@@ -2,7 +2,7 @@
 
 .select {
 	&__wrapper {
-		width: 400px;
+		width: 300px;
 	}
 
 	&__head {
@@ -19,7 +19,7 @@
 
 	&__context {
 		position: absolute;
-		width: 400px;
+		width: 300px;
 		background: $light-grey-color;
 		color: $white-color;
 		overflow-y: auto;

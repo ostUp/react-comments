@@ -3,8 +3,11 @@ import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import Header from '../../components/Header';
 import styles from './styles.module.scss';
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
+	const navigate = useNavigate()
+
 	return (
 		<>
 			<Header />
@@ -16,8 +19,10 @@ function Login() {
 						<MainInput type="password" placeholder="Пароль" />
 					</form>
 					<div className={styles['wrapper__btn']}>
-						<Button s={'main_blue'}  className={styles.btn}>Увійти</Button>
-						<Button s={'main_red'} className={styles.register}>
+						<Button s={'main_blue'} onClick={() => navigate('/')} className={styles.btn}>
+							Увійти
+						</Button>
+						<Button s={'main_red'} onClick={() => navigate('/reg')} className={styles.register}>
 							Зареєструватися
 						</Button>
 					</div>

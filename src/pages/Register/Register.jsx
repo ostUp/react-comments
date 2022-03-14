@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import styles from './styles.module.scss';
 
 function Register() {
+	const navigate = useNavigate()
 	return (
 		<>
 			<Header />
@@ -17,10 +19,10 @@ function Register() {
 						<MainInput type="password" placeholder="Повторіть пароль" />
 					</form>
 					<div className={styles['wrapper__btn']}>
-						<Button s={'main_blue'} className={styles.register}>
+						<Button s={'main_blue'} onClick={() => navigate('/login')} className={styles.register}>
 							Зареєструватися
 						</Button>
-						<Button s={'main_red'} className={styles.btn}>
+						<Button s={'main_red'} onClick={() => navigate('/')} className={styles.btn}>
 							Увійти
 						</Button>
 					</div>

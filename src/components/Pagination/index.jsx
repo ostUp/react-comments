@@ -1,20 +1,20 @@
 import React from 'react';
-import PaginationButton from '../UI/PaginationButton';
+import Button from '../UI/Button';
 import styles from './styles.module.scss';
 
 function Pagination() {
 	return (
 		<div className={styles.pagination}>
-			<PaginationButton>1</PaginationButton>
-			<PaginationButton>2</PaginationButton>
-			<PaginationButton>3</PaginationButton>
-			<PaginationButton>4</PaginationButton>
-			<PaginationButton>5</PaginationButton>
-			<PaginationButton>6</PaginationButton>
-			<PaginationButton>7</PaginationButton>
-			<PaginationButton>8</PaginationButton>
-			<PaginationButton>9</PaginationButton>
-			<PaginationButton>10</PaginationButton>
+			<Button s={'pagination'}>1</Button>
+			<Button s={'pagination'}>2</Button>
+			<Button s={'pagination'}>3</Button>
+			<Button s={'pagination'}>4</Button>
+			<Button s={'pagination'}>5</Button>
+			<Button s={'pagination'}>6</Button>
+			<Button s={'pagination'}>7</Button>
+			<Button s={'pagination'}>8</Button>
+			<Button s={'pagination'}>9</Button>
+			<Button s={'pagination'}>10</Button>
 		</div>
 	);
 }

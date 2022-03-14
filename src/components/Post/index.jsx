@@ -1,10 +1,8 @@
 import React from 'react';
-import SmallButton from '../UI/SmallButton';
-import SmallButtonDanger from '../UI/SmallButton/SmallButtonDanger';
+import Button from '../UI/Button';
 import styles from './styles.module.scss';
 
 function Post(props) {
-	console.log(props);
 	return (
 		<div className={styles['post__wrapper']}>
 			<div className={styles['post__left-side']}>
@@ -15,8 +13,8 @@ function Post(props) {
 				<p className={styles['post__text']}>{props.post.body}</p>
 			</div>
 			<div className={styles['post__btns']}>
-				<SmallButton style={{ marginRight: '30px' }}>🔍</SmallButton>
-				<SmallButtonDanger>🗑️</SmallButtonDanger>
+				<Button s={'small_blue'} style={{ marginRight: '30px' }}>🔍</Button>
+				<Button s={'small_red'}>🗑️</Button>
 			</div>
 		</div>
 	);

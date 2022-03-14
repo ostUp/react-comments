@@ -1,7 +1,7 @@
 import React from 'react';
-import WhiteButton from '../../components/UI/WhiteButton';
+import Button from '../../components/UI/Button';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function NotFound() {
 	return (
@@ -15,7 +15,7 @@ function NotFound() {
 					</p>
 				</div>
 				<div className="right__side">
-					<WhiteButton>На головну</WhiteButton>
+					<Button s={'main_blue'}>На головну</Button>
 				</div>
 			</div>
 		</div>

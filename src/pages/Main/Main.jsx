@@ -1,15 +1,17 @@
+/* eslint-disable react/style-prop-object */
 import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
 import PostList from '../../components/PostList';
 import Select from '../../components/Select';
+import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import Modal from '../../components/UI/Modal';
-import WhiteButton from '../../components/UI/WhiteButton';
 import styles from './styles.module.scss';
 
 function Main() {
-	const [posts, setPosts] = useState([
+	console.log('!!!');
+	const [posts] = useState([
 		{
 			id: 1,
 			title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
@@ -52,9 +54,9 @@ function Main() {
 	return (
 		<>
 			<Modal active={modalActive} setActive={setModalActive}>
-				<MainInput placeholder='Введіть заголовок...'/>
-				<MainInput placeholder='Введіть тіло поста...'/>
-				<WhiteButton>Додати</WhiteButton>
+				<MainInput placeholder="Введіть заголовок..." />
+				<MainInput placeholder="Введіть тіло поста..." />
+				<Button s={'main_red'}>Додати</Button>
 			</Modal>
 			<Header />
 			<div className={styles.container}>
@@ -62,7 +64,7 @@ function Main() {
 				<div className={styles['main__top']}>
 					<Select />
 					<div className={styles['main__top-add']}>
-						<WhiteButton onClick={() => setModalActive(true)}>Додати пост 🔥</WhiteButton>
+						<Button s={'main_red'} onClick={() => setModalActive(true)}>Додати пост 🔥</Button>
 					</div>
 					<div className={styles['main__top-search']}>
 						<MainInput placeholder="Пошук..." />

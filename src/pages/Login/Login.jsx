@@ -1,9 +1,8 @@
 import React from 'react';
-import MainButton from '../../components/UI/MainButton';
+import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import Header from '../../components/Header';
 import styles from './styles.module.scss';
-import WhiteButton from '../../components/UI/WhiteButton';
 
 function Login() {
 	return (
@@ -17,8 +16,10 @@ function Login() {
 						<MainInput type="password" placeholder="Пароль" />
 					</form>
 					<div className={styles['wrapper__btn']}>
-						<MainButton className={styles.btn}>Увійти</MainButton>
-						<WhiteButton className={styles['register']}>Зареєструватися</WhiteButton>
+						<Button s={'main_blue'}  className={styles.btn}>Увійти</Button>
+						<Button s={'main_red'} className={styles.register}>
+							Зареєструватися
+						</Button>
 					</div>
 				</div>
 			</div>

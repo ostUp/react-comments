@@ -149,19 +149,21 @@
 
 .pagination {
 	color: $white-color;
-	background-color: transparent;
-	display: inline-block;
+	background-color: $dark-grey-color;
+	display: block;
 	padding: 17px 22px;
 	border-radius: 5px;
+	border: 0;
 	font-weight: 600;
 	font-size: 18px;
+	margin-right: 20px;
 	line-height: 110%;
 	cursor: pointer;
 	&:hover {
 		color: $white-color;
 		background-color: $blue-color;
 		box-shadow: 0px 5px 18px rgba(0, 156, 169, 0.3);
-		transition: 0.3s;
+		transition: 0.2s;
 	}
 	&:active {
 		color: $white-color;

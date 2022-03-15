@@ -3,14 +3,14 @@ import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import Header from '../../components/Header';
 import styles from './styles.module.scss';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	return (
 		<>
-			<Header />
+			<Header type={'login'} />
 			<div className={styles.container}>
 				<div className={styles.wrapper}>
 					<h1 className={styles.header}>Сторінка входу</h1>

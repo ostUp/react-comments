@@ -6,10 +6,10 @@ import MainInput from '../../components/UI/MainInput';
 import styles from './styles.module.scss';
 
 function Register() {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	return (
 		<>
-			<Header />
+			<Header type="register" />
 			<div className={styles.container}>
 				<div className={styles.wrapper}>
 					<h1 className={styles.header}>Сторінка реєстрації</h1>

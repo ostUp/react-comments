@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 function About() {
 	return (
 		<>
-			<Header />
+			<Header type={'logout'}/>
 			<div className={styles.container}>
 				<h1 className={styles.about__header}>Про мене</h1>
 				<h3 className={styles['about__text']}>

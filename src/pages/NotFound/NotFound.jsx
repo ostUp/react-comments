@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from '../../components/UI/Button';
 import styles from './styles.module.scss';
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function NotFound() {
+	const navigate = useNavigate()
 	return (
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
@@ -15,7 +16,7 @@ function NotFound() {
 					</p>
 				</div>
 				<div className="right__side">
-					<Button s={'main_blue'}>На головну</Button>
+					<Button s={'main_blue'} onClick={() => navigate('/')} >На головну</Button>
 				</div>
 			</div>
 		</div>

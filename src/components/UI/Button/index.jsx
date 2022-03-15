@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 function Button({ s, children, ...props }) {
 	return (
-		<a
+		<button
 			{...props}
 			className={classNames({
 				[styles.main_red]: s === 'main_red',
@@ -17,7 +17,7 @@ function Button({ s, children, ...props }) {
 			})}
 		>
 			{children}
-		</a>
+		</button>
 	);
 }
 

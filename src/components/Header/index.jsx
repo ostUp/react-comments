@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 
-function Header() {
+function Header({ type }) {
 	return (
 		<header className={styles.header}>
 			<div className={styles.container}>
@@ -21,8 +21,19 @@ function Header() {
 							</li>
 						</div>
 						<li className={styles['nav__list-item']}>
-							<Link to="/login" className={styles['nav__list-link']}>
-								Увійти
+							<Link
+								to={
+									type === 'login'
+										? '/'
+										: type === 'register'
+										? '/login'
+										: type === 'logout'
+										? '/login'
+										: '/login'
+								}
+								className={styles['nav__list-link']}
+							>
+								{type === 'login' ? 'Увійти' : type === 'register' ? 'Створити акаунт' : 'Вийти'}
 							</Link>
 						</li>
 					</ul>

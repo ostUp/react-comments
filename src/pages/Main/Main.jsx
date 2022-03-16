@@ -2,81 +2,82 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
+import PostForm from '../../components/PostForm';
 import PostList from '../../components/PostList';
-import Select from '../../components/Select';
 import Button from '../../components/UI/Button';
 import MainInput from '../../components/UI/MainInput';
 import Modal from '../../components/UI/Modal';
 import styles from './styles.module.scss';
+import Select from '../../components/Select';
 
 function Main() {
-	console.log('!!!');
-	const [posts] = useState([
-		{
-			id: 1,
-			title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-			body: 'quia et suscipituuntur expedita et cumnreprehenderit molestiae ut ut quas totamnostrum rerum est autem sunt rem eveniet architecto',
-		},
-		{
-			id: 2,
-			title: 'qui est esse',
-			body: 'est rerum tempoint nihil reprehenderit dolor beatae ea dolores nequiis voluptate porro vel nihil molestiae ut reicienui neque nisi nulla',
-		},
-		{
-			id: 3,
-			title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-			body: 'et iusto sed qu aut adnvoluptatem doloribus vel accusantium quis pariaturnmolestiae porro eius odio et labore et velit aut',
-		},
-		{
-			id: 4,
-			title: 'eum et est occaecati',
-			body: 'ullam et ssit aadcdsmcom ifomdovm iofdmi midfmif m mfi quis sunt voluptatem rerum illo velit',
-		},
-		{
-			id: 5,
-			title: 'qui est esse',
-			body: 'est rerum tempoint nihil reprehenderit dolor beatae ea dolores nequiis voluptate porro vel nihil molestiae ut reicienui neque nisi nulla',
-		},
-		{
-			id: 6,
-			title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-			body: 'et iusto sed qu aut adnvoluptatem doloribus vel accusantium quis pariaturnmolestiae porro eius odio et labore et velit aut',
-		},
-		{
-			id: 7,
-			title: 'eum et est occaecati',
-			body: 'ullam et ssit aadcdsmcom ifomdovm iofdmi midfmif m mfi quis sunt voluptatem rerum illo velit',
-		},
+	const [posts, setPosts] = useState([
+		{ id: 1, title: 'surit', body: 'itecto' },
+		{ id: 2, title: 'esse', body: 'nulla' },
+		{ id: 3, title: ' aut', body: 'em aut' },
+		{ id: 4, title: 'escaecati', body: 'velit' },
 	]);
 
 	const [modalActive, setModalActive] = useState(false);
 
+	const [searchQuery, setSearchQuery] = useState('');
+
+	const [selectedSort, setSelectedSort] = useState('');
+
+	function createPost(newPost) {
+		setPosts([...posts, newPost]);
+		setModalActive(false);
+	}
+
+	function removePost(post) {
+		setPosts(posts.filter((p) => p.id !== post.id));
+	}
+
+	function sortPosts(sort) {
+		setSelectedSort(sort);
+		setPosts([...posts].sort((a, b) => a[sort].toLocalCompare(b[sort])));
+	}
+
 	return (
 		<>
 			<Modal active={modalActive} setActive={setModalActive}>
-				<MainInput placeholder="Введіть заголовок..." />
-				<MainInput placeholder="Введіть тіло поста..." />
-				<Button s={'main_red'}>Додати</Button>
+				<PostForm create={createPost} />
 			</Modal>
-			<Header />
+			<Header s={'login'} />
 			<div className={styles.container}>
 				<h1 className={styles['main__header']}>Сторінка з постами</h1>
 				<div className={styles['main__top']}>
-					<Select />
+					<Select
+						defaulValue={'Сортувати..'}
+						value={selectedSort}
+						onChange={sortPosts}
+						options={[
+							{ value: 'title', name: 'Сортувати по заголовку' },
+							{ value: 'body', name: 'Сортувати по опису' },
+						]}
+					></Select>
 					<div className={styles['main__top-add']}>
-						<Button s={'main_red'} onClick={() => setModalActive(true)}>Додати пост 🔥</Button>
+						<Button s={'main_red'} onClick={() => setModalActive(true)}>
+							Додати пост 🔥
+						</Button>
 					</div>
 					<div className={styles['main__top-search']}>
-						<MainInput placeholder="Пошук..." />
+						<MainInput
+							value={searchQuery}
+							onChange={(e) => setSearchQuery(e.target.value)}
+							placeholder="Пошук..."
+						/>
 					</div>
 				</div>
 
 				{posts.length !== 0 ? (
-					<PostList posts={posts} />
+					<>
+						<PostList remove={removePost} posts={posts} />
+						<Pagination />
+					</>
 				) : (
 					<h1 className={styles['main__header']}>Добавте пост!</h1>
 				)}
-				<Pagination />
 			</div>
 		</>
 	);

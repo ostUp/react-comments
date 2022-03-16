@@ -1,11 +1,11 @@
 import React from 'react';
 import Post from '../Post';
 
-function PostList({ posts }) {
+function PostList({ posts, remove }) {
 	return (
 		<div>
-			{posts.map((post) => (
-				<Post post={post} key={post.id} />
+			{posts.map((post, index) => (
+				<Post remove={remove} number={index + 1} post={post} key={post.id} />
 			))}
 		</div>
 	);

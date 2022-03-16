@@ -10,7 +10,7 @@ function Login() {
 
 	return (
 		<>
-			<Header type={'login'} />
+			<Header type={'register'} />
 			<div className={styles.container}>
 				<div className={styles.wrapper}>
 					<h1 className={styles.header}>Сторінка входу</h1>

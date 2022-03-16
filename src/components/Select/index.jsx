@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
-import { oneOfType, string, object, array } from 'prop-types';
 import OutsideClickHandler from 'react-outside-click-handler';
 import styles from './styles.module.scss';
 import arrowDown from '../../assets/images/select-arrow.svg';
 
-function Select({
-	options = ['По заголовку', 'По опису'],
-	value = '',
-	placeholder = 'Сортування',
-	onChange = () => {},
-}) {
+function MySelect({ options, defaulValue, value, onChange }) {
 	const [open, setOpen] = useState(false);
 
-	const changeOpen = (v) => {
-		setOpen(v);
-	};
-
-	const clickOption = (i) => {
-		onChange(i);
-		changeOpen(false);
-	};
+	function clickOption() {
+		onChange();
+		setOpen(false);
+	}
 
 	return (
 		<div className={styles['select__wrapper']}>
-			<OutsideClickHandler onOutsideClick={() => changeOpen(false)}>
-				<div className={styles['select__head']} onClick={() => changeOpen(true)}>
-					<p>{value.title ?? placeholder}</p>
+			<OutsideClickHandler onOutsideClick={() => setOpen(false)}>
+				<div className={styles['select__head']} onClick={() => setOpen(true)}>
+					<p>{options[0].name ?? defaulValue}</p>
 					<div>
 						<img src={arrowDown} alt="arrow" />
 					</div>
 				</div>
-				{open && (
+				{open && options.length && (
 					<div className={styles['select__context']}>
-						{options.map((i) => (
-							<p
-								key={i.value}
+						{options.map((option) => (
+							<div
+								value={option.value}
+								key={option.value}
+								onClick={() => clickOption}
 								className={styles['select__context__item']}
-								onClick={() => clickOption(i)}
 							>
-								{i}
-							</p>
+								{option.name}
+							</div>
 						))}
 					</div>
 				)}
@@ -48,10 +39,5 @@ function Select({
 	);
 }
 
-Select.propTypes = {
-	options: array,
-	placeholder: string,
-	value: oneOfType([string, object]),
-};
+export default MySelect;
 
-export default Select;

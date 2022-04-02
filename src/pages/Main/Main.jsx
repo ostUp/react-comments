@@ -1,5 +1,5 @@
 /* eslint-disable react/style-prop-object */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
 import PostForm from '../../components/PostForm';
@@ -23,6 +23,12 @@ function Main() {
 	const [searchQuery, setSearchQuery] = useState('');
 
 	const [selectedSort, setSelectedSort] = useState('');
+
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/posts')
+			.then((response) => response.json())
+			.then((data) => setPosts(data));
+	}, []);
 
 	function createPost(newPost) {
 		setPosts([...posts, newPost]);

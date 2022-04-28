@@ -1,4 +1,3 @@
-/* eslint-disable react/style-prop-object */
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Pagination from '../../components/Pagination';
@@ -11,17 +10,9 @@ import styles from './styles.module.scss';
 import Select from '../../components/Select';
 
 function Main() {
-	const [posts, setPosts] = useState([
-		{ id: 1, title: 'surit', body: 'itecto' },
-		{ id: 2, title: 'esse', body: 'nulla' },
-		{ id: 3, title: ' aut', body: 'em aut' },
-		{ id: 4, title: 'escaecati', body: 'velit' },
-	]);
-
+	const [posts, setPosts] = useState([]);
 	const [modalActive, setModalActive] = useState(false);
-
 	const [searchQuery, setSearchQuery] = useState('');
-
 	const [selectedSort, setSelectedSort] = useState('');
 
 	useEffect(() => {
@@ -30,19 +21,20 @@ function Main() {
 			.then((data) => setPosts(data));
 	}, []);
 
-	function createPost(newPost) {
+	const createPost = (newPost) => {
 		setPosts([...posts, newPost]);
 		setModalActive(false);
-	}
+	};
 
-	function removePost(post) {
+	const removePost = (post) => {
 		setPosts(posts.filter((p) => p.id !== post.id));
-	}
+	};
 
-	function sortPosts(sort) {
+	const sortPosts = (sort) => {
 		setSelectedSort(sort);
-		setPosts([...posts].sort((a, b) => a[sort].toLocalCompare(b[sort])));
-	}
+		console.log(sort);
+		setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
+	};
 
 	return (
 		<>
@@ -54,14 +46,15 @@ function Main() {
 				<h1 className={styles['main__header']}>Сторінка з постами</h1>
 				<div className={styles['main__top']}>
 					<Select
-						defaulValue={'Сортувати..'}
 						value={selectedSort}
 						onChange={sortPosts}
+						defaultValue="Count of elems on the page"
 						options={[
-							{ value: 'title', name: 'Сортувати по заголовку' },
-							{ value: 'body', name: 'Сортувати по опису' },
+							{ value: 'name', name: 'Sort by name' },
+							{ value: 'title', name: 'Sort by title' },
 						]}
-					></Select>
+					/>
+
 					<div className={styles['main__top-add']}>
 						<Button s={'main_red'} onClick={() => setModalActive(true)}>
 							Додати пост 🔥

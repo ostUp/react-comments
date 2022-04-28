@@ -1,8 +1,17 @@
-// import React, { useState } from 'react';
+import React from 'react';
 // import styles from './styles.module.scss';
 
-function MySelect() {
-	// const [open, setOpen] = useState(false);
-}
+const Select = ({ options, defaultValue, value, onChange }) => {
+	return (
+		<select value={value} onChange={(event) => onChange(event.target.value)}>
+			<option disabled value="">{defaultValue}</option>
+			{options.map((option) => (
+				<option key={option.value} value={option.value}>
+					{option.name}
+				</option>
+			))}
+		</select>
+	);
+};
 
-export default MySelect;
+export default Select;

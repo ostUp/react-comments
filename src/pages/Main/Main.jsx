@@ -50,7 +50,7 @@ function Main() {
 						onChange={sortPosts}
 						defaultValue="Count of elems on the page"
 						options={[
-							{ value: 'name', name: 'Sort by name' },
+							{ value: 'body', name: 'Sort by name' },
 							{ value: 'title', name: 'Sort by title' },
 						]}
 					/>

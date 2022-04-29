@@ -1,2 +1,8 @@
-@import "../../styles/variables.scss";
+@import '../../styles/variables.scss';
 
+.select {
+	background: transparent;
+	color: $blue-color;
+	border: none;
+	font-size: medium;
+}
